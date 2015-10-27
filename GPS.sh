@@ -8,7 +8,7 @@ while true; do
 			
 			latitude=$(cat GPS.log)
 			if [ -z "$latitude" ]; then
-				echo ""
+				echo "">/dev/null 2>&1
 			else
 				echo $LINE |grep GPRMC| tr '[,]' '[\t]' |awk '{print $6}' > GPS.log
 				longitude=$(cat GPS.log)
